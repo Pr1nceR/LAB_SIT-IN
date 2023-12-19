@@ -1,0 +1,76 @@
+﻿<Window x:Name="TimerWindow" x:Class="LAB_SIT_IN.UserTimer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LAB_SIT_IN"
+        mc:Ignorable="d"
+        Title="UserTimer" 
+        Height="60"
+        Width="320" 
+        Foreground="{x:Null}"
+        Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual" Icon="/Assets/LOGO.png">
+
+    <Border CornerRadius="0,0,30,30" Background="#FF222831">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="5" BlurRadius="10" Direction="320" Color="Black" Opacity=".5"/>
+        </Border.Effect>
+        <Grid x:Name="Layout">
+            <Grid x:Name="CountdownTimer">
+                <Label x:Name="Countdown_LBL" Content="TIME | XX:XX:XX |" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Poppins SemiBold" FontSize="30" Margin="13,0,0,0"/>
+                <Button x:Name="out_BTN" Content="" HorizontalAlignment="Left" Margin="271,0,0,0" VerticalAlignment="Center" Height="32" Width="38" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="out_BTN_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Image x:Name="btnImage" Source="Assets/Buttons/BTN_close.png" Stretch="Uniform"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_close_highlight.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_close.png"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+            <Grid x:Name="TimeOut" d:IsHidden="True" Visibility="Hidden">
+                <Label x:Name="TimeOut_LBL" Content="TIME-OUT? |" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontFamily="Poppins SemiBold" FontSize="30" Margin="16,0,0,0"/>
+                <Button x:Name="yes_BTN" Content="" HorizontalAlignment="Left" Margin="218,0,0,0" VerticalAlignment="Center" Height="32" Width="38" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="yes_BTN_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Image x:Name="btnImage" Source="/Assets/Buttons/BTN_check.png" Stretch="Uniform"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_check_white.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_check.png"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="no_BTN" Content="" HorizontalAlignment="Left" Margin="260,0,0,0" VerticalAlignment="Center" Height="32" Width="38" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="no_BTN_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Image x:Name="btnImage" Source="/Assets/Buttons/BTN_close.png" Stretch="Uniform"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_close_highlight.png"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="False">
+                                    <Setter TargetName="btnImage" Property="Source" Value="Assets/Buttons/BTN_close.png"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
